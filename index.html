@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>musica</title>
+    <link rel="stylesheet" href="./stilos.css">
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Tracks used in this music/audio player application are free to use. I downloaded them from Soundcloud and NCS websites. I am not the owner of these tracks. 
+  asi se copia de github
+    <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_3.jpg" id="_3">
+        <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_4.jpg" id="_4">
+        <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_5.jpg" id="_5">
+
+         <img src="" id="_6">
+  -->
+<div class="header">
+  <a href="#" class="button" id="abrir">
+    <i class="fas fa-bars"></i>
+  </a>
+</div>
+<div id="miModal" class="modal">
+  <div class="flex" id="flex">
+      <div class="contenido-modal">
+          <div class="modal-header flex">
+              <h2>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CANCIONES</h2>
+              <span class="close" id="close">&times;</span>
+          </div>
+          <div class="modal-body">
+              <ul>
+                  <li> 1. break the distance&nbsp;&nbsp; 2.Bokura dake no shudaika   </li>
+                  <li>3.talking to the moom&nbsp;&nbsp;  4.gwiyomi&nbsp;&nbsp;  5.cristina&nbsp;&nbsp;  6.iris</li>
+                  <li>7.forever&nbsp;&nbsp;  8.ill wait&nbsp;&nbsp;  9.pareja del año </li>
+                  <li>10.shigatsu wa kimi no uso&nbsp;&nbsp;  11.viernes 13  </li>
+                  <li>12.centimilimental&nbsp;&nbsp;  13.centimilimental</li>
+                  <li>14.sunday morning&nbsp;&nbsp;  15.snowman&nbsp;&nbsp;  16.heart first </li>
+                  <li>17.in luv with u&nbsp;&nbsp;  18.maps &nbsp;&nbsp; 19.without you</li>
+                  <li>20.Jealous&nbsp;&nbsp;   21.locked away&nbsp;&nbsp;   22.dancing in my room </li>
+                  <li>23.love is gone &nbsp;&nbsp; 24.montero&nbsp;&nbsp;  25.sweater weather </li>
+                  <li>26.stole the show&nbsp;&nbsp;   27.paris &nbsp;&nbsp; 28.raging</li>
+                  <li>29.stargazing &nbsp;&nbsp; 30.arcade &nbsp;&nbsp;   31.set fire to the rain  </li>
+                  <li>32.magic&nbsp;&nbsp;  33.i think i'm in love &nbsp;&nbsp; 34.dancing</li>
+                  <li> 35.buttercup&nbsp;&nbsp;  36.beggin&nbsp;&nbsp;  37.que mas pues</li>
+                  <li>38.todo de ti &nbsp;&nbsp; 39.como te veo&nbsp;&nbsp;  40.trellas </li>
+                  <li>41.locked out of heaven &nbsp;&nbsp; 42.i wanna be your slave</li>
+                  <li>43.coraline&nbsp;&nbsp;  44.telepatia&nbsp;&nbsp;  45.make you mine </li>
+                  <li>46.we fell in love in october &nbsp;&nbsp; 47.backyard boy</li>
+                  <li>48.surf mesa ily  &nbsp;&nbsp; 49.here&nbsp;&nbsp;  50.colapso &nbsp;&nbsp; 51.kiss of death</li>
+                  <li>52.kiss me more &nbsp;&nbsp; 53.es que yo te quiero a ti </li>
+                  <li>54.mirror&nbsp;&nbsp;  55.HERO´S LOVE&nbsp;&nbsp;  56. somebody to love</li>
+                  <li> 57.tu lloraste primero&nbsp;&nbsp;   58.bajo la mesa  </li>
+                  <li>59.lo que construimos</li>
+                  <li>60.si supieras&nbsp;&nbsp; &nbsp;&nbsp;  61.sparkle &nbsp;&nbsp; 62.stay</li>
+                  <li>63.vivo por ti &nbsp;&nbsp; &nbsp;&nbsp; 64.ame ni utaeba</li>
+                  <li> 65.i wanna be your slave</li>            
+              </ul>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div id="app-cover">
+  <div id="player">
+    <div id="player-content">
+      <div id="album-art">
+        <img src="https://stickerly.pstatic.net/sticker_pack/cLEErDZjSJeqyY0myZvxAQ/NFALXL/2/65e73654-2d26-43f1-b2c7-2afca0692dbe.png" class="active" id="_1">
+        <img src="https://i.pinimg.com/236x/3a/f3/2a/3af32a47425077a3137650217595d487.jpg" id="_2">
+        <img src="https://i.pinimg.com/originals/c9/9b/92/c99b92ad9d9e652c9adee91b37085ce2.jpg" id="_3">
+        <img src="https://i.pinimg.com/736x/81/45/d2/8145d27fc3364a4ed9babe59bade3725.jpg" id="_4">
+        <img src="https://64.media.tumblr.com/64b66fd2e2c584a01b9945e59d388bf7/401bf1221a415eed-c7/s640x960/ca2b9a48d96e4442841f90138531955ada484789.jpg" id="_5">
+        <img src="https://www.diarioviral.net/wp-content/uploads/2020/09/da3b81a0b5a0730c93b7628cea3892d168ee9a38_00.jpg" id="_6">
+        <img src="https://www.diarioviral.net/wp-content/uploads/2020/09/63d7fdcf79793e21d943f029bd6209cc.jpg" id="_7">
+        <img src="https://www.diarioviral.net/wp-content/uploads/2020/09/screen-1.jpg" id="_8">
+        <img src="https://pm1.narvii.com/6222/a04fac1b0be55e135ca74ebccd5749e93bf90f6c_hq.jpg" id="_9">
+        <img src="https://pm1.narvii.com/6154/65bacddb10114c0d5e444a0f12050e69e1c18664_hq.jpg" id="_10">
+        <img src="https://i.pinimg.com/originals/ef/b6/22/efb62260801ae60842ed46ea5bb4ba2c.jpg" id="_11">
+        <img src="https://i.pinimg.com/originals/b5/38/07/b53807d6cbe2cf5319014f518c88eefc.jpg" id="_12">
+        <img src="https://www.pngitem.com/pimgs/m/523-5232007_drawing-anime-kawaii-dibujos-anime-chicas-chibi-hd.png" id="_13">
+        <img src="https://i.pinimg.com/564x/87/c1/fd/87c1fd0dff2fe660d6496f333ca8bb6c.jpg" id="_14">
+        <img src="https://i.pinimg.com/1200x/d1/24/e1/d124e163893ad19a866b31d03f2a8485.jpg" id="_15">
+        <img src="https://i.pinimg.com/474x/f2/3f/79/f23f79511790c2e543aea41610a212a3--kawaii-anime-girl-manga-kawaii.jpg" id="_16">
+        <img src="https://pm1.narvii.com/6612/95ced7f7c0e52e4f4a09c0a3c332dcb7247eb7c4_hq.jpg" id="_17">
+        <img src="https://c.tenor.com/x2GUVKL2APwAAAAC/anime-kawaii.gif" id="_18">
+        <img src="https://c.tenor.com/v3mmhTRfBosAAAAC/anime-kawaii.gif" id="_19">
+        <img src="http://pa1.narvii.com/6269/450befd536386d98fd58d4dd8ecf5d383a3080b8_00.gif" id="_20">
+        <img src="http://pa1.narvii.com/6202/22ae2de728217cfbe10be36d97dd8ef4878f3ec0_00.gif" id="_21">
+        <img src="https://i.pinimg.com/originals/af/6f/78/af6f78fb3cd00d3839354dd1b13c3417.gif" id="_22">
+        <img src="https://pa1.narvii.com/6920/3f95a79c0350b2ffdf414940687df3e842211552r1-344-428_hq.gif" id="_23">
+        <img src="https://d.wattpad.com/story_parts/939237180/images/162d1152e37e1413757210565085.gif" id="_24">
+        <img src="https://pa1.narvii.com/7505/e2929474c7106efe7ec86fa9bdfef42bfcfa30c4r1-480-270_hq.gif" id="_25">
+        <img src="https://data.whicdn.com/images/286290260/original.gif" id="_26">
+        <img src="https://c.tenor.com/mauYoe_8i-0AAAAC/anime-girl.gif" id="_27">
+        <img src="https://i.pinimg.com/originals/17/42/19/174219c231fbefe8c60e575fd3e4ece4.gif" id="_28">
+        <img src="https://i.pinimg.com/originals/2a/3a/02/2a3a020417deca849d7cb6218edf75fa.gif" id="_29">
+        <img src="https://i.pinimg.com/originals/da/43/a7/da43a771bf231acd4b6bd2f10addd7a6.gif" id="_30">
+        <img src="https://c.tenor.com/wHsDn2cjVOMAAAAC/my-love-story-anime.gif" id="_31">
+        <img src="https://static.tumblr.com/66ceeb33a299ca8de9b105aeb43f269a/hd1zdsz/C8Jnq17kh/tumblr_static_tumblr_static_630do6peir8cskcg4g8g80kwk_focused_v3.gif" id="_32">
+        <img src="https://i.pinimg.com/originals/49/07/82/4907826da52d2e2c784e931ba7ccbb34.gif" id="_33">
+        <img src="https://i.gifer.com/PRpe.gif" id="_34">
+        <img src="https://64.media.tumblr.com/f438f11da18965b2b777e2563776ea74/tumblr_o2jjx03Qy31v5tf6so1_500.gifv" id="_35">
+        <img src="https://i.pinimg.com/originals/76/ac/d2/76acd2a0ece11df55fe15ea4dae6a518.gif" id="_36">
+        
+        <img src="https://pa1.narvii.com/7482/7cd1c02732efde96d04a3c9e8dfad9a6a5cd3df7r1-400-500_hq.gif" id="_37">
+        <img src="https://c.tenor.com/sX7UK6eUx7IAAAAC/anime-love-lab.gif" id="_38">
+        <img src="https://i.pinimg.com/originals/97/b9/f3/97b9f3d8495edfc8d6bb0ac845bbfca7.gif" id="_39">
+        <img src="https://i.pinimg.com/736x/0c/71/38/0c71381a7198aa98345b559507c02c08.jpg" id="_40">
+        <img src="http://31.media.tumblr.com/tumblr_mbqcfo3mKT1re0aezo1_500.gif" id="_41">
+        <img src="https://pa1.narvii.com/6289/10ba2ff5e8adbef4d62604f8c6a1b08497cc0ade_hq.gif" id="_42">
+        
+        <img src="https://pa1.narvii.com/6392/126354d7b7caa591e74fa7a50e8e89c3cd43d0db_hq.gif" id="_43">
+        <img src="https://i.pinimg.com/originals/84/32/24/843224f051bc3ca4d91789e10a5e33d8.gif" id="_44">
+        <img src="https://c.tenor.com/c30d5fcJsNwAAAAC/anime-cute.gif" id="_45">
+        <img src="https://cdn.streamelements.com/uploads/2f957da6-97cd-46fc-9393-197b107169f2.gif" id="_46">
+        <img src="https://forums.comunidades.riotgames.com/t5/image/serverpage/image-id/6812i31756DF56CD482AC/image-size/large?v=v2&px=999" id="_47">
+        <img src="https://c.tenor.com/LX-2YEcAtzMAAAAC/hearts-anime.gif" id="_48">
+        <img src="https://image.myanimelist.net/ui/NMhxKjGdQ21NnPG4rzwny8r08CqBUXobKcrYF1rxtOhBvBqXNQXiee11PLGfXmSW" id="_49">
+        <img src="https://i.pinimg.com/originals/11/0d/bd/110dbddfd3d662479c214cacb754995d.gif" id="_50">
+        <img src="https://c.tenor.com/73cUvhdcbKUAAAAC/anime-love.gif" id="_51">
+        <img src="https://c.tenor.com/WDyJR0HOrUUAAAAC/tohru-kobayashi.gif" id="_52">
+        <img src="http://pa1.narvii.com/6370/0f83fbf1e472863d4fae20a339f4581c11583dec_00.gif" id="_53">
+        <img src="https://pa1.narvii.com/6355/7ec0982ce50f55f8ebe59505a4339980d2dcd44c_hq.gif" id="_54">
+        <img src="https://pa1.narvii.com/6325/e6e03d8d5d6d094cdc1ae7f10007a03ef917594b_hq.gif" id="_55">
+        <img src="https://c.tenor.com/fRc7yQ0tzFQAAAAC/anime-girl.gif" id="_56">
+        <img src="https://78.media.tumblr.com/e70c63af8f6e0153c73d50b28ee34c6d/tumblr_inline_p63e676Pth1v4mfgr_500.gif" id="_57">
+        <img src="https://64.media.tumblr.com/c2c3d9ba772f454477afc050c6e71b9f/6f59a155f9094fee-3f/s1280x1920/b71671743c867e62efaf724988ab9c7bab192b92.gifv" id="_58">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/95740abd-84e1-40f6-9ea9-9a73ce727d1a/ddkoe71-74ed2789-2a14-4bc7-a295-f981cdf7fae2.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzk1NzQwYWJkLTg0ZTEtNDBmNi05ZWE5LTlhNzNjZTcyN2QxYVwvZGRrb2U3MS03NGVkMjc4OS0yYTE0LTRiYzctYTI5NS1mOTgxY2RmN2ZhZTIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.u74jbllXXX44vWxywWdmeFZzEjaVbs8LK1SdgDgv8pw" id="_59">
+        <img src="https://66.media.tumblr.com/db7f12e1e3bec65388981185b3ee15c0/tumblr_oq8lzmUUHS1tydz8to1_540.gifv" id="_60">
+        <img src="https://c.tenor.com/TTzBJq1DsYkAAAAC/tohru-kobayashisan-chi-no-maid-dragon.gif" id="_61">
+        <img src="https://c.tenor.com/tCgN78iimk4AAAAC/cute-anime.gif" id="_62">
+        <img src="https://gifimage.net/wp-content/uploads/2017/11/gif-anime-kawaii-5.gif" id="_63">
+        <img src="https://c.tenor.com/BQ9Z5w72LE4AAAAC/chikafujowara-anime.gif" id="_64">
+        <img src="https://aniyuki.com/wp-content/uploads/2021/05/aniyuki-anime-dance-gif-22.gif" id="_65">
+        
+        <div id="buffer-box"></div>
+      </div>
+      <div id="player-controls">
+        <div class="control">
+          <div class="button" id="play-previous">
+            <i class="fas fa-backward"></i>
+          </div>
+        </div>
+        <div class="control">
+          <div class="button" id="play-pause-button">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+        <div class="control">
+          <div class="button" id="play-next">
+            <i class="fas fa-forward"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+  <script src="./scrpit.js"></script>
+  <script src="main.js"></script>
+</body>
+
+
+</html>

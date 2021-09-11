@@ -1,0 +1,325 @@
+@import url(https://use.fontawesome.com/releases/v5.3.1/css/all.css);
+
+*:focus {
+  outline: none;
+}
+
+body {
+  font-family: Helvetica, Arial;
+  margin: 0;
+  background-image: url(https://free4kwallpapers.com/uploads/originals/2015/07/13/listening-to-music.jpg);
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+}
+
+#app-cover {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  left: 50%;
+  width: 100px;
+  height: 430px;
+  margin: -4px auto;
+}
+
+#player {
+  position: relative;
+  height: 100%;
+  z-index: 3;
+}
+
+#player-content {
+  position: relative;
+  height: 100%;
+  background-color: rgb(212, 185, 228);
+  box-shadow: 0 30px 80px #6565659d;
+  border-radius: 15px;
+  z-index: 2;
+}
+
+#album-art {
+  position: absolute;
+  top: 280px;
+  width: 100px;
+  height: 100px;
+  transform: rotateZ(0);
+  transition: 0.3s ease all;
+  box-shadow: 0 0 0 10px rgb(171, 247, 224);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#album-art.active {
+  top: 290px;
+  box-shadow: 0 0 0 4px rgb(130, 241, 208), 0 30px 50px -15px #afb7c1;
+}
+
+#album-art:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  margin: -10px auto 0 auto;
+  background-color: #d6dee7;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px #fff;
+  z-index: 2;
+}
+
+#album-art img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: -1;
+}
+
+#album-art img.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+#album-art.active img.active {
+  z-index: 1;
+  animation: rotateAlbumArt 3s linear 0s infinite forwards;
+}
+
+@keyframes rotateAlbumArt {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+#buffer-box {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 13px;
+  color: #1f1f1f;
+  font-size: 13px;
+  font-family: Helvetica;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1;
+  padding: 6px;
+  margin: -12px auto 0 auto;
+  background-color: rgba(255, 255, 255, 0.19);
+  opacity: 0;
+  z-index: 2;
+}
+
+#album-art img,
+#buffer-box {
+  transition: 0.1s linear all;
+}
+
+#album-art.buffering img {
+  opacity: 0.25;
+}
+
+#album-art.buffering img.active {
+  opacity: 0.8;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+
+#album-art.buffering #buffer-box {
+  opacity: 1;
+}
+
+#player-controls {
+  width: 100%;
+  height: 250px;
+  margin: 10px 0 0 0;
+  float: right;
+  overflow: hidden;
+}
+
+.control {
+  height: 33.333%;
+  padding: 0 12px;
+}
+
+.button {
+  width: 26px;
+  height: 26px;
+  padding: 25px;
+  background-color: rgb(117, 66, 143);
+  box-shadow: 0 5px 5px #656565;
+  border-radius: 50%;
+  cursor: pointer;
+}   
+
+.button i {
+  display: block;
+  color: rgb(171, 247, 224);
+  font-size: 26px;
+  text-align: center;
+  line-height: 1;
+}
+
+.button,
+.button i {
+  transition: 0.2s ease all;
+}
+
+.button:hover {
+  background-color: rgb(117, 66, 143);
+}
+
+.button:hover i {
+  color: #fff;
+}
+
+
+
+
+
+.header {
+  display: grid;
+  
+}
+
+.header>.button {
+  display: grid;
+  width: 10px;
+  height: 10px;
+  align-items: center;
+  justify-items: center;
+  background-color: rgba(117, 66, 143, 0);
+  box-shadow: 0 5px 5px rgba(65, 64, 64, 0);
+  border-radius: 50%;
+}
+
+
+/*--------------------------------------------------------------------*/
+
+html {
+  --bg: url(https://swall.teahub.io/photos/small/245-2455734_imagenes-anime-de-amor-fondos-para-pantalla-animes.jpg);
+  --color-text: #ff0000;
+}
+
+.flex {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal {
+  display: none;
+  position: relative;
+  z-index: 5;
+  overflow: auto;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+}
+
+
+/*ventana flotante*/
+
+.contenido-modal {
+  position: relative;
+  background-color: rgba(3, 0, 0, 0.568);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  margin-left: 50px;
+  width: 50%;
+  height: 50%;
+  animation-name: modal;
+  animation-duration: 1s;
+  cursor: pointer;
+  /*box-shadow: var( --color-inset-shadow);*/
+}
+
+@keyframes modal {
+  from {
+      top: -330px;
+      opacity: 0;
+  }
+  to {
+      top: 0;
+      opacity: 1;
+  }
+}
+
+.close {
+  color: #ffffff;
+  text-align: center;
+  position: absolute;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  border-radius: 50%;
+ /* box-shadow: var(--color-shadow);*/
+}
+
+.close:hover {
+  color: #7f8c8d;
+  text-decoration: none;
+  cursor: pointer;
+  
+}
+
+
+/*editar caja del titulo*/
+
+.modal-header,
+.footer {
+  padding: 8px 16px;
+  background: var(--ba);
+  color: var( --color-text);
+  box-shadow: var(--color-shadow);
+  cursor: pointer;
+}
+
+p {
+  text-align: center;
+  font-size: 25px;
+  color: #d6dee7;
+}
+
+li {
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+}
+
+.modal-body h2 {
+  text-align: center;
+  color: #fff;
+}
+
+.modal-body {
+  padding: 20px 16px;
+}
+
+@media screen and (max-width:900px) {
+  .contenido-modal {
+      width: 70%;
+  }
+  .textos {
+      padding: 150px;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .textos {
+      padding: 50px;
+  }
+}
